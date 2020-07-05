@@ -1,0 +1,252 @@
+@charset "utf-8";
+/* CSS Document */
+html, body, div, span, header, section, nav, article, aside, footer, p, h1, h2, h3, h4{
+	border:0; margin:0;padding:0;
+}
+
+/* or download a CSS reset e.g. normalize */
+html{
+	font-family:Gotham, "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size:18px; /* equal to 100% or 1em */
+}
+
+.flex-container{
+	display:flex;
+	flex-wrap:wrap;
+	width:80%;
+	min-height:100%;
+	margin:0 auto;
+	background-image:url(../images/background.jpg);
+	background-size: cover;
+	background-position: center;  
+}
+
+.header {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	justify-content: center;
+	width:100%;
+	min-height:6em;
+  	order: 1;
+	background-color:rgba(27, 157, 167, 0.5);
+	background-image:linear-gradient(rgb(141, 141, 230), white);
+}
+.nav {
+	width:100%;
+	height:3em;
+  order: 2;
+	background-color:black;
+}
+.menuItem{
+	display:flex;
+	align-items:center;
+	justify-content:space-around;
+	width:25%;
+	height:3em;
+	float:left;
+	background-color:rgba(0,0,0,1.00);
+	color:#FFF;
+	transition: transform 1s, background 1s, font-size 1s;
+}
+.menuItem:hover{
+	background-color:rgba(255,0,0,1.00);	
+	cursor: pointer;
+}
+article{
+  display:flex;
+  flex-wrap:wrap;
+  order: 4;
+  flex: 1 100%;
+  background-color: rgba(245, 248, 235, 0.65);
+}
+
+.contentLeft {
+  order: 3;
+  flex: 1 0%;
+  background-color:rgb(170, 219, 155);
+}
+.contentRight{
+  order: 5;
+  flex: 1 0%;
+  background-color:rgb(170, 219, 155);
+}
+footer {
+  display:flex;
+  width:100%;
+  height:4em;
+  order:6;
+  justify-content:center;
+  align-items:center;
+	background-color: antiquewhite;
+	background-image:linear-gradient(white,rgb(141, 141, 230));
+}
+
+.bigholder {
+	width:100%;
+	height:auto;
+	float:left;
+}
+
+.holder{
+	width:25%;
+	min-height:600px;
+	float:left;
+}
+
+.holder img {
+	width:100%;
+	height:100%;
+	box-sizing: border-box;
+	border: 1px solid black;
+}
+
+figure {
+	width: 80%;
+	margin: 5% auto;
+	background-color: rgba(250, 235, 215, 0.6);
+}
+
+figcaption { /*keep the buttons at the bottom of figcaption*/
+	min-height: 200px;
+	padding: 10px;
+	display: flex;
+	flex-wrap: wrap;
+	align-items: flex-end; 
+	justify-content: space-around;
+}
+
+.holder a { /*style the edit and del buttons*/
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 5px;
+	width: 50%;
+	display: flex;
+	justify-content: center;	
+	line-height: 40px;
+	text-align: center;		
+	background-color: gainsboro;
+}
+
+.bigholder h2{
+	padding: 10px;
+	text-align: center; 
+}
+
+fieldset {
+	box-sizing: border-box;
+	border: 2px solid gray;
+	border-radius: 10px;
+	min-height: 300px;
+	background-color: rgba(211, 211, 211, 0.4);
+}
+
+
+label{
+	width:25%;
+	float:left;
+	text-align:right;
+	padding-top:15px;
+	margin:0.5%;
+	font-size:1em;
+}
+input[type="text"],input[type="email"], input[type="password"]{
+	width:70%;
+	float:left;
+	padding:1%;
+	margin:0.5%;
+	font-size:1em;
+	border:1px solid #B19898;
+	border-radius:5px;
+}
+
+input[type="radio"] {
+	margin-top: 28px;
+}
+
+input[type="submit"], input[type='button']{
+	float:right;
+	padding:15px;
+	font-size:1.2em;
+	border-radius: 10px;
+	min-width:120px;
+	background-color:black;
+	color:white;
+	margin-top:1.5em;
+	margin-right: 2%;
+	transition: 0.5s
+}
+
+input[type="submit"]:hover, input[type='button']:hover {
+	background-color:tomato;
+	cursor: pointer;
+}
+
+.buttons {
+	position: relative;
+	width: 100%;
+}
+
+.black {
+	font-size: 1em;
+	width: 100%;
+}
+
+a:link, a:active, a:visited{
+  color:lightgray;
+  text-decoration: none;
+}
+
+@media only screen and (max-width: 1100px) {
+	.flex-container {
+		width:100%;
+	}
+	.nav {
+		order:1;
+	}
+	.header {
+		order:2;
+	}
+	.holder {
+		width:33%;		
+	}
+	.contentLeft, .contentRight {
+		display:none;
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	label{
+		width:95%;
+		float:left;
+		text-align:left;
+		padding:0.5%;
+		margin:0.5%;
+		font-size:1em;
+	}
+	input[type="text"],input[type="email"]{
+		width:95%;
+		float:left;
+		padding:1%;
+		margin:0.5%;
+		font-size:1em;
+		border:1px solid #B19898;
+		border-radius:2%;
+	}
+
+	.flex-container {
+		width:100%;
+	}
+	.holder {
+		width:100%;		
+	}
+	.contentLeft, .contentRight {
+		display:none;
+	}
+	.nav {
+		height:auto;
+	}
+	.menuItem {
+		width:100%;
+	}
+}
