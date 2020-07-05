@@ -2,9 +2,9 @@
 $sql = "SELECT * FROM book WHERE BookID = '{$_GET['BookID']}'";
 $stmt = $conn->prepare($sql);
 $stmt->execute();
-$result = $stmt->fetch(PDO::FETCH_ASSOC);	 
+$result = $stmt->fetch(PDO::FETCH_ASSOC);
 
-?>  
+?>
 
 <div class="bigholder">
   <h1>Delete book: <?php echo $result['BookTitle'] ?></h1>
